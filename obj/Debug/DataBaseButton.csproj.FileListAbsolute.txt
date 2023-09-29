@@ -1,0 +1,11 @@
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\bin\Debug\DataBaseButton.exe.config
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\bin\Debug\DataBaseButton.exe
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\bin\Debug\DataBaseButton.pdb
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.csproj.AssemblyReference.cache
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.csproj.SuggestedBindingRedirects.cache
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.Form1.resources
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.Properties.Resources.resources
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.csproj.GenerateResource.cache
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.csproj.CoreCompileInputs.cache
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.exe
+D:\N\Project\Something\ClRep\CalckSharp\DataBaseButton\obj\Debug\DataBaseButton.pdb
