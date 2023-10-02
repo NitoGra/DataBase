@@ -5,25 +5,21 @@ using System.Windows.Forms;
 
 namespace DataBaseButton
 {
-    namespace NS
+    static class Program
     {
-        static class Program
+        static void Main()
         {
-            [STAThread]
-            static void Main()
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1()); // <- вот тут
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 
     public partial class Form1 : Form
     {
-        private static bool isrPressed = false;
-        private static bool isePressed = false;
-        private static bool isdPressed = false;
+        private static bool isRPressed = false;
+        private static bool isEPressed = false;
+        private static bool isDPressed = false;
         private static readonly int maxLengthName = 10;
         private static readonly int maxLengthLevel = 999;
 
@@ -310,37 +306,41 @@ namespace DataBaseButton
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            const int indexR = 82;
+            const int indexE = 69;
+            const int indexD = 68;
+
             switch (e.KeyValue)
             {
-                case 82:
-                    isrPressed = true;
-                    isePressed = false;
-                    isdPressed = false;
+                case indexR:
+                    isRPressed = true;
+                    isEPressed = false;
+                    isDPressed = false;
                     break;
 
-                case 69:
-                    isePressed = true;
-                    isdPressed = false;
+                case indexE:
+                    isEPressed = true;
+                    isDPressed = false;
                     break;
 
-                case 68:
-                    isdPressed = true;
+                case indexD:
+                    isDPressed = true;
                     break;
 
                 default:
                     BackColor = Color.White;
-                    isrPressed = false;
-                    isePressed = false;
-                    isdPressed = false;
+                    isRPressed = false;
+                    isEPressed = false;
+                    isDPressed = false;
                     break;
             }
 
-            if ((isrPressed, isePressed, isdPressed) == (true, true, true))
+            if ((isRPressed, isEPressed, isDPressed) == (true, true, true))
             {
                 BackColor = Color.Red;
-                isrPressed = false;
-                isePressed = false;
-                isdPressed = false;
+                isRPressed = false;
+                isEPressed = false;
+                isDPressed = false;
             }
         }
 
