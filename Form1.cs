@@ -5,13 +5,27 @@ using System.Windows.Forms;
 
 namespace DataBaseButton
 {
+    namespace NS
+    {
+        static class Program
+        {
+            [STAThread]
+            static void Main()
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Form1()); // <- вот тут
+            }
+        }
+    }
+
     public partial class Form1 : Form
     {
-        static bool rCode = false;
-        static bool eCode = false;
-        static bool dCode = false;
-        static readonly int maxLengthName = 10;
-        static readonly int maxLengthLevel = 999;
+        private static bool isrPressed = false;
+        private static bool isePressed = false;
+        private static bool isdPressed = false;
+        private static readonly int maxLengthName = 10;
+        private static readonly int maxLengthLevel = 999;
 
         class DataBase
         {
@@ -257,14 +271,14 @@ namespace DataBaseButton
         {
             Dictionary<int, Player> _p = dataBase.ShowPlayer();
             listBox1.Text = "";
-            string spase = "";
+
             foreach (KeyValuePair<int, Player> player in _p)
             {
                 int personalId = player.Key;
                 listBox1.Text = listBox1.Text + $"|  Id: {personalId}  " +
                                                 $"|  Статус бана: {dataBase.GetBanStatus(personalId)}  " +
                                                 $"|  Уровень: {dataBase.GetLevel(personalId)}  " +
-                                                $"|  {dataBase.GetName(personalId)}  \n" ;
+                                                $"|  {dataBase.GetName(personalId)}  \n";
             }
         }
 
@@ -299,34 +313,34 @@ namespace DataBaseButton
             switch (e.KeyValue)
             {
                 case 82:
-                    rCode = true;
-                    eCode = false;
-                    dCode = false;
+                    isrPressed = true;
+                    isePressed = false;
+                    isdPressed = false;
                     break;
 
                 case 69:
-                    eCode = true;
-                    dCode = false;
+                    isePressed = true;
+                    isdPressed = false;
                     break;
 
                 case 68:
-                    dCode = true;
+                    isdPressed = true;
                     break;
 
                 default:
                     BackColor = Color.White;
-                    rCode = false;
-                    eCode = false;
-                    dCode = false;
+                    isrPressed = false;
+                    isePressed = false;
+                    isdPressed = false;
                     break;
             }
 
-            if ((rCode, eCode, dCode) == (true, true, true))
+            if ((isrPressed, isePressed, isdPressed) == (true, true, true))
             {
                 BackColor = Color.Red;
-                rCode = false;
-                eCode = false;
-                dCode = false;
+                isrPressed = false;
+                isePressed = false;
+                isdPressed = false;
             }
         }
 
